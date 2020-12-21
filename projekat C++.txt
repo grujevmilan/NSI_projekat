@@ -1,0 +1,26 @@
+C++ features:
+	- CONSTANTS
+		- nullptr
+		- constexpr
+	- TYPE INTERFACE
+		- auto
+		- decltype
+	- CONTROL FLOW
+		- ranged-based for loop
+	- OBJECT-ORIENTED
+		- delegate constructor		//done
+		- inheritance constructor	//done
+		- override					//done
+		- final						//done
+	- LAMBDA EXPRESSION
+	- RVALUE REFERENCE
+	- CONTAINERS
+		- std::array
+		- std::tuple
+		- std::bitset
+		- std::vector				//done
+		- std::pair					//done
+		- std::map
+	- SMART POINTERS				//done
+	- REGEX ?
+	- NEW TYPE ?
