@@ -14,7 +14,7 @@ public:
 	Parent(int, string); //inheritance constructor
 	~Parent();
 	void ChildrenSort(); //lambda, sort algorithm, auto
-	void ShowChildren();
+	void ShowChildren(); //range-based for loop
 	void AddChild(std::shared_ptr<Person>); //std::vector
 	void SayHello() override; //override
 };

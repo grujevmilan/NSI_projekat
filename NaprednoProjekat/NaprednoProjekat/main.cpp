@@ -56,8 +56,9 @@ void friends()
 	Phoebe->AddParent(Joey);
 }
 
-void CandleSwitching()
+void CandleSwitching() //bitset
 {
+	/*If the observed candle is let then states of this candle and all candles before it are changed to the opposite.*/
 	constexpr int NumberOfCandles = 5;
 	bitset<NumberOfCandles> Candles;
 	Candles.set();

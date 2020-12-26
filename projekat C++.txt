@@ -17,7 +17,7 @@ C++ features:
 	- CONTAINERS
 		- std::array
 		- std::tuple
-		- std::bitset
+		- std::bitset				//done
 		- std::vector				//done
 		- std::pair					//done
 		- std::map
