@@ -2,17 +2,20 @@
 #include <iostream>
 #include <vector>
 #include "Person.h"
+#include <algorithm>
 
 using namespace std;
 
-class Parent final : public Person
+class Parent final : public Person //final
 {
-	std::vector<std::shared_ptr<Person>> children;
+	std::vector<std::shared_ptr<Person>> children; //smart pointers
 public:
 	Parent();
-	Parent(int, string);
+	Parent(int, string); //inheritance constructor
 	~Parent();
-	void AddChild(std::shared_ptr<Person>);
-	void SayHello() override;
+	void ChildrenSort(); //lambda, sort algorithm, auto
+	void ShowChildren();
+	void AddChild(std::shared_ptr<Person>); //std::vector
+	void SayHello() override; //override
 };
 

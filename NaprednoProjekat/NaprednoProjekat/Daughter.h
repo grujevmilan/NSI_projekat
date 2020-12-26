@@ -3,13 +3,13 @@
 
 using namespace std;
 
-class Daughter final : public Person
+class Daughter final : public Person //final
 {
-	std::pair<weak_ptr<Parent>, weak_ptr<Parent>> parents;
+	std::pair<weak_ptr<Parent>, weak_ptr<Parent>> parents; //smart pointers
 public:
-	Daughter(int, string);
+	Daughter(int, string); //inheritance constructor
 	~Daughter();
-	void SayHello() override;
-	void AddParent(weak_ptr<Parent> parent);
+	void SayHello() override; //override
+	void AddParent(weak_ptr<Parent> parent); //std::pair
 };
 

@@ -14,7 +14,8 @@ public:
 	Person();
 	Person(int);
 	Person(int, string); //delegate constructor
-	virtual ~Person();
+	inline int GetId() { return ID; };
+	~Person();
 	virtual void SayHello();
 };
 

@@ -3,16 +3,16 @@ C++ features:
 		- nullptr
 		- constexpr
 	- TYPE INTERFACE
-		- auto
+		- auto						//done
 		- decltype
 	- CONTROL FLOW
-		- ranged-based for loop
+		- ranged-based for loop		//done	
 	- OBJECT-ORIENTED
 		- delegate constructor		//done
 		- inheritance constructor	//done
 		- override					//done
 		- final						//done
-	- LAMBDA EXPRESSION
+	- LAMBDA EXPRESSION				//done
 	- RVALUE REFERENCE
 	- CONTAINERS
 		- std::array
