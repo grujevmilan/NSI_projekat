@@ -118,16 +118,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Daughter.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parent.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Son.cpp" />
+    <ClCompile Include="Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Daughter.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Parent.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Son.h" />
+    <ClInclude Include="Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

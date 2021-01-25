@@ -5,56 +5,58 @@
 #include "Son.h"
 #include "Daughter.h"
 
+#include "Game.h"
+
 using namespace std;
 
-void foo(int)
-{
-	cout << "INFO: call foo(int)" << endl;
-}
-
-void foo(char*)
-{
-	cout << "INFO: call foo(char*)" << endl;
-}
-
-void friends()
-{
-	char ross[] = "Ross";
-	shared_ptr<Parent> Ross = make_shared<Parent>(5, ross);
-	Ross->SayHello();
-
-	char rachel[] = "Rachel";
-	shared_ptr<Parent> Rachel = make_shared<Parent>(28, rachel);
-	Rachel->SayHello();
-
-	char chandler[] = "Chandler";
-	shared_ptr<Son> Chandler = make_shared<Son>(2, chandler);
-	Chandler->SayHello();
-
-	char monica[] = "Monica";
-	shared_ptr<Daughter> Monica = make_shared<Daughter>(9, monica);
-	Monica->SayHello();
-
-	char joey[] = "Joey";
-	shared_ptr<Parent> Joey = make_shared<Parent>(17, joey);
-	Joey->SayHello();
-
-	char phoebe[] = "Phoebe";
-	shared_ptr<Daughter> Phoebe = make_shared<Daughter>(20, phoebe);
-	Phoebe->SayHello();
-
-	Ross->AddChild(Chandler);
-	Chandler->AddParent(Ross);
-	Rachel->AddChild(Monica);
-	Monica->AddParent(Ross);
-	Rachel->AddChild(Chandler);
-	Chandler->AddParent(Rachel);
-	Rachel->ShowChildren();
-	Rachel->ChildrenSort();
-	Rachel->ShowChildren();
-	Joey->AddChild(Phoebe);
-	Phoebe->AddParent(Joey);
-}
+//void foo(int)
+//{
+//	cout << "INFO: call foo(int)" << endl;
+//}
+//
+//void foo(char*)
+//{
+//	cout << "INFO: call foo(char*)" << endl;
+//}
+//
+//void friends()
+//{
+//	char ross[] = "Ross";
+//	shared_ptr<Parent> Ross = make_shared<Parent>(5, ross);
+//	Ross->SayHello();
+//
+//	char rachel[] = "Rachel";
+//	shared_ptr<Parent> Rachel = make_shared<Parent>(28, rachel);
+//	Rachel->SayHello();
+//
+//	char chandler[] = "Chandler";
+//	shared_ptr<Son> Chandler = make_shared<Son>(2, chandler);
+//	Chandler->SayHello();
+//
+//	char monica[] = "Monica";
+//	shared_ptr<Daughter> Monica = make_shared<Daughter>(9, monica);
+//	Monica->SayHello();
+//
+//	char joey[] = "Joey";
+//	shared_ptr<Parent> Joey = make_shared<Parent>(17, joey);
+//	Joey->SayHello();
+//
+//	char phoebe[] = "Phoebe";
+//	shared_ptr<Daughter> Phoebe = make_shared<Daughter>(20, phoebe);
+//	Phoebe->SayHello();
+//
+//	Ross->AddChild(Chandler);
+//	Chandler->AddParent(Ross);
+//	Rachel->AddChild(Monica);
+//	Monica->AddParent(Ross);
+//	Rachel->AddChild(Chandler);
+//	Chandler->AddParent(Rachel);
+//	Rachel->ShowChildren();
+//	Rachel->ChildrenSort();
+//	Rachel->ShowChildren();
+//	Joey->AddChild(Phoebe);
+//	Phoebe->AddParent(Joey);
+//}
 
 void CandleSwitching() //bitset
 {
@@ -74,11 +76,17 @@ void CandleSwitching() //bitset
 	cout << "Candles after: " << Candles.to_string() << endl;
 }
 
+int foo()
+{
+	return 1;
+}
+
 int main()
 {
-	//foo(nullptr);
-	//foo(NULL);
-	//friends();
-	CandleSwitching();
+	//CandleSwitching();
+
+	std::unique_ptr<Game> game = make_unique<Game>();
+	game->PlayGame();
+
 	system("pause");
 }
