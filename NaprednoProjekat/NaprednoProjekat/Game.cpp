@@ -76,7 +76,7 @@ void Game::PlayGame()
 
 		std::tuple<string, string, int, int> result = make_tuple(players.first->Name(), players.second->Name(), players.first->Count(), players.second->Count());
 
-		auto printResult = [result, matchCounter]() {
+		[result, matchCounter]() {
 			string p1name = std::get<0>(result);
 			string p2name = std::get<1>(result);
 			int p1win = std::get<2>(result);
@@ -91,8 +91,7 @@ void Game::PlayGame()
 				else
 					cout << "TIE" << endl;
 			}
-		};
+		}();
 
-		printResult();
 	}
 }
