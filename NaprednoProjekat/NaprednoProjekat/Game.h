@@ -10,7 +10,7 @@ using namespace std;
 class Game
 {
 	std::shared_ptr<Table> table; //smart pointer
-	std::pair<std::shared_ptr<Player>, std::shared_ptr<Player>> players; //std::pair
+	std::pair<std::shared_ptr<Player>, std::shared_ptr<Player>> players; 
 public:
 	Game();
 	~Game();

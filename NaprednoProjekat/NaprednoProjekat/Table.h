@@ -5,11 +5,12 @@
 #include <bitset>
 
 #define DIMENSION 3
+
 using namespace std;
 
 class Table
 {
-	std::array<array<char, DIMENSION>, DIMENSION> tableFields; //array
+	std::array<array<char, DIMENSION>, DIMENSION> tableFields;
 public:
 	Table();
 	~Table();

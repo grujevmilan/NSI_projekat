@@ -29,31 +29,17 @@ char Table::CheckWin()
 
 	for(int i = 0; i< DIMENSION; i++)
 	{
-		for (int j = 0; j < DIMENSION - 1; j++)
-			if (tableFields[i][j] != tableFields[i][j + 1])
-			{
-				win = false;
-			}
-		if (win == true )
-		{
-			winner = tableFields[i][0];
-			if(winner != '-')
-				return winner;
-		}
+		winner = [fields = tableFields](int x) {
+			return fields[x][0] & fields[x][1] & fields[x][2];
+		}(i);
+		if (winner == 'X' || winner == 'O')
+			return winner;
 
-		win = true;
-		winner = '-';
-		for (int j = 0; j < DIMENSION - 1; j++)
-			if (tableFields[j][i] != tableFields[j+1][i])
-			{
-				win = false;
-			}
-		if (win == true)
-		{
-			winner = tableFields[i][0];
-			if (winner != '-')
-				return winner;
-		}
+		winner = [fields = tableFields](int x) {
+			return fields[0][x] & fields[1][x] & fields[2][x];
+		}(i);
+		if (winner == 'X' || winner == 'O')
+			return winner;
 	}
 
 	bool win_md = true;
@@ -87,10 +73,10 @@ void Table::PrintTable()
 	cout << "TABLE:" << endl;
 	cout << "   0 1 2" << endl;
 	int i = 0;
-	for (auto row : tableFields)
+	for (auto row = tableFields.begin(); row != tableFields.end(); ++row)
 	{
 		cout << " " << i++ << " ";
-		for (auto cell : row)
+		for (auto cell : *row)
 			cout << cell << " ";
 		cout << endl;
 	}

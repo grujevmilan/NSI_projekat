@@ -10,6 +10,7 @@ Game::Game()
 
 Game::~Game()
 {
+	cout << "Delete game" << endl;
 }
 
 
@@ -54,6 +55,7 @@ void Game::PlayGame()
 			if (moveCounter > 3)
 			{
 				decltype(table->CheckWin()) winner = table->CheckWin();
+
 				if (winner == 'X')
 				{
 					players.first->SetScore(matchCounter, (matchCounter % 2 == 0) ? true : false);
@@ -74,24 +76,21 @@ void Game::PlayGame()
 			}
 		}
 
-		std::tuple<string, string, int, int> result = make_tuple(players.first->Name(), players.second->Name(), players.first->Count(), players.second->Count());
 
-		[result, matchCounter]() {
-			string p1name = std::get<0>(result);
-			string p2name = std::get<1>(result);
-			int p1win = std::get<2>(result);
-			int p2win = std::get<3>(result);
-			cout << "RESULT: " << p1name <<"  "<< p1win <<":"<< p2win <<"  "<< p2name << endl;
-			if (matchCounter == 9)
-			{
-				if (p1win > p2win)
-					cout << p1name << " is WINNER!" << endl;
-				else if (p1win < p2win)
-					cout << p2name << " is WINNER!" << endl;
-				else
-					cout << "TIE" << endl;
-			}
-		}();
+		auto[player1Name, player1Score] = players.first->GetPlayerInfo();
+		auto[player2Name, player2Score] = players.second->GetPlayerInfo();
+
+		cout << "RESULT: " << player1Name << "  " << player1Score << ":" << player2Score<< "  " << player2Name<< endl;
+
+		if (matchCounter == 9)
+		{
+			if (player1Score > player2Score)
+				cout << player1Name << " is WINNER!" << endl;
+			else if (player1Score < player2Score)
+				cout << player2Score << " is WINNER!" << endl;
+			else
+				cout << "TIE" << endl;
+		}
 
 	}
 }

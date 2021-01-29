@@ -9,16 +9,16 @@
 
 using namespace std;
 
-//void foo(int)
-//{
-//	cout << "INFO: call foo(int)" << endl;
-//}
-//
-//void foo(char*)
-//{
-//	cout << "INFO: call foo(char*)" << endl;
-//}
-//
+void foo(int)
+{
+	cout << "info: call foo(int)" << endl;
+}
+
+void foo(char*)
+{
+	cout << "info: call foo(char*)" << endl;
+}
+
 //void friends()
 //{
 //	char ross[] = "Ross";
@@ -76,17 +76,30 @@ void CandleSwitching() //bitset
 	cout << "Candles after: " << Candles.to_string() << endl;
 }
 
+constexpr int fibonacci(const int n)
+{
+	return n == 1 || n == 2 ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 int foo()
 {
-	return 1;
+	return 10;
 }
+
 
 int main()
 {
-	//CandleSwitching();
+	foo(NULL);
+	foo(nullptr);
 
-	std::unique_ptr<Game> game = make_unique<Game>();
-	game->PlayGame();
+	int niz1[fibonacci(5)];
+	//float niz2[foo()];
+
+	//CandleSwitching();
+	{
+		std::unique_ptr<Game> game = make_unique<Game>();
+		game->PlayGame();
+	}
 
 	system("pause");
 }

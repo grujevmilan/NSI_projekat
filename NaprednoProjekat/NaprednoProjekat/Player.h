@@ -15,11 +15,15 @@ class Player
 public:
 	Player();
 	Player(string); //delegate constructor
-	void EnterMove(char);
-	inline string Name() { return name; };
-	void SetScore(int, bool);
-	int Count();
+	Player(const Player& player) = delete;
 	~Player();
+	void EnterMove(char);
+	void SetScore(int, bool);
+
+	inline decltype(auto) GetCount() { return score.count(); };
+
+	std::tuple<string, int> GetPlayerInfo();
+
 	void AssignTable(shared_ptr<Table> t); //smart pointer
 };
 

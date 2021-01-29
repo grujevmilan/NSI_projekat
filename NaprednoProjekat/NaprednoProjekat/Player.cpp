@@ -41,7 +41,9 @@ void Player::SetScore(int gameNumber, bool flag)
 		score.reset(gameNumber);
 }
 
-int Player::Count()
+std::tuple<string, int> Player::GetPlayerInfo()
 {
-	return score.count();
+	int scores = static_cast<int>(GetCount());
+	return tuple<string, int>(name, scores);
 }
+
