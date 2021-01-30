@@ -1,22 +1,20 @@
 C++ features:
 	- CONSTANTS
-		- nullptr
-		- constexpr
+		- nullptr					//done
+		- constexpr					//done
 	- TYPE INTERFACE
 		- auto						//done
-		- decltype
+		- decltype					//done
 	- CONTROL FLOW
 		- ranged-based for loop		//done	
 	- OBJECT-ORIENTED
 		- delegate constructor		//done
-		- inheritance constructor	//done
 		- override					//done
 		- final						//done
 	- LAMBDA EXPRESSION				//done
-	- RVALUE REFERENCE
 	- CONTAINERS
-		- std::array
-		- std::tuple
+		- std::array				//done
+		- std::tuple				//done
 		- std::bitset				//done
 		- std::vector				//done
 		- std::pair					//done
